@@ -4,12 +4,20 @@ const loginForm = document.querySelector('.log-in-form');
 const loginContainer = document.querySelector('.log-in-container');
 const appContainer = document.querySelector('.app-container');
 
-// functions
 
 let data = {
     username: 'start',
     password: 'start'
 }
+
+axios
+    .get('/api/beats')
+    .then(res => {
+        let tracks = res.data;
+        let track = document.createElement('p');
+        track.textContent = tracks
+        document.body.appendChild(track)
+    })
 
 function handleLogin(e) {
     e.preventDefault();

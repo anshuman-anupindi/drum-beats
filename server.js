@@ -6,6 +6,7 @@ const errorHandler = require('./middlewares/error_handler.js');
 // const beatsController = require('./controllers/beats_controller.js');
 const { request } = require('express');
 const sessionsController = require('./controllers/sessions_controller.js')
+const beatsController = require('./controllers/beats_controller.js')
 const api_key = 414837986633473;
 
 // var session = require('express-session');
@@ -17,15 +18,16 @@ const api_key = 414837986633473;
 // app.use(session({ secret: 'keyboard cat', cookie: { maxAge: 60000 }}))
 
 // // Access the session as req.session
+
 // app.get('/', (req, res, next) => {
-//   if (req.session.user_id) {
-//     console.log('works');
-//   } else {
-//     req.session.user_id = 1
-//     res.end('welcome to the session demo. refresh!')
-//   }
-//   console.log(req);
+//   Track
+//         .findAll()
+//         .then(dbRes => {
+//             console.log(dbRes.rows)
+//         })
+//     next(dbRes.rows)
 // })
+// console.log(Track.findAll());
 
 app.listen(port, () => {
     console.log(`listening on port ${port} ...`);
@@ -39,6 +41,6 @@ app.use(express.json());
 
 app.use('/api/sessions', sessionsController)
 
-// app.use('/api/beats', beatsController);
+app.use('/api/beats', beatsController);
 
 app.use(errorHandler);
