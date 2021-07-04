@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Bona+Nova:wght@700&family=PT+Sans:wght@700&family=Roboto:wght@500&family=Yomogi&display=swap');
+
 * {
     color: black;
     font-family: 'PT Sans', sans-serif;
@@ -48,7 +49,8 @@ body {
 }
 
 header, main, footer, .console-section, .feed-section, .player-section, .filter-section {
-    border: 1px solid black;
+    border: 3px solid black;
+    border-radius: 4px;
 }
 
 main, header, footer {
@@ -78,7 +80,13 @@ main {
     text-align: center;
 }
 
+/* .filter-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+} */
+
 .filter-section {
+    /* margin: 0 auto; */
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
 }
@@ -87,10 +95,7 @@ main {
   display: flex;
   flex-direction: row;
   align-items: center;
-  
 }
-
-
 
 .feed-section figure {
     border: 2px solid black;
@@ -117,17 +122,14 @@ main {
 }
 
 .filter-btn {
+    min-width: 100px;
     border: 3px solid grey;
     margin: 5px;
     text-align: center;
     border-radius: 4px;
     background-color: white;
-    color: black;
+    color: grey;
     padding: 10px auto;
-}
-
-.filter-btn {
-    cursor: pointer;
 }
 
 .filter-btn:hover {
@@ -157,7 +159,8 @@ main {
 .user-tracks-section {
     height: 30%;
     overflow: auto;
-    border: 3px solid rgb(173, 155, 170);
+    /* border: 3px solid black;
+    border-radius: 4px; */
     width: 70%;
     margin-left: auto;
     margin-right: auto;
@@ -181,7 +184,7 @@ main {
 }
 
 .open-upload-btn {
-    border: 3px solid grey;
+    border: 3px solid black;
     border-radius: 4px;
     width: 40%;
     margin: 0 auto;
@@ -191,7 +194,7 @@ main {
 .open-upload-btn:hover {
     cursor: pointer;
     color: white;
-    background-color: grey;
+    background-color: black;
 }
 
 .hidden {
@@ -237,7 +240,6 @@ legend {
 fieldset {
     display: flex;
     flex-direction: column;
-
 }
 
 form {
